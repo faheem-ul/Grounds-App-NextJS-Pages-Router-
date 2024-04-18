@@ -6,6 +6,7 @@ import lineSvg from "../public/line.svg";
 import arrowSvg from "../public/arrow.svg";
 import appleHealth from "../public/applehealth.svg";
 import googleHealth from "../public/googlehealth.svg";
+import videoSvg from "../public/video.svg";
 function Home() {
   return (
     <div
@@ -46,10 +47,19 @@ function Home() {
         </div>
       </div>
 
-      <div className="main-heading px-[100px] pt-[50px]">
-        <h1 className="text-[75px] text-primary">Grounds</h1>
-        <h1 className="text-[75px] text-primary">New Year</h1>
-        <h1 className="text-[75px] text-primary">Challange</h1>
+      <div className="relative flex flex-row items-center gap-[200px]">
+        <div className="main-heading px-[100px] pt-[50px]">
+          <h1 className="text-[75px] text-primary">Grounds</h1>
+          <h1 className="text-[75px] text-primary">New Year</h1>
+          <h1 className="text-[75px] text-primary">Challange</h1>
+        </div>
+        <Link href="https://firebasestorage.googleapis.com/v0/b/grounds-4c8d1.appspot.com/o/grounds-web%2FWebsite%20Horizontal%20Action%20Shots%20Final%20COMPRESSED%20(no%20sound).mp4?alt=media&token=7a15b1e2-207d-464c-a690-6b13c826853e">
+          <Image
+            className="absolute left-[53%]"
+            src={videoSvg}
+            alt="video svg"
+          />
+        </Link>
       </div>
 
       <div className="footer-para-main-div px-[100px] pt-[22px]">
