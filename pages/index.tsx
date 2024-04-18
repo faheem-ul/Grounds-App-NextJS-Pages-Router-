@@ -9,92 +9,72 @@ import googleHealth from "../public/googlehealth.svg";
 function Home() {
   return (
     <div
-      className="main-div h-[100vh] w-full bg-black bg-cover"
+      className="main-div h-[100vh] bg-cover"
       style={{ backgroundImage: 'url("/Screenshot (55).png")' }}
     >
       <div className="px-[100px] pt-[35px] ">
-        <div className="nav-main-div flex flex-row items-center justify-between rounded-[37px] bg-primary px-[60px] py-[10px] ">
+        <div className="nav-main-div flex flex-row items-center justify-between rounded-[37px] bg-primary px-[50px] py-[10px] ">
           <div>
-            <h1 className="text-h2 font-bold text-secondary">GROUNDS</h1>
+            <h2 className="font-bold text-accent">GROUNDS</h2>
           </div>
 
           <div className="flex flex-row gap-9">
             <Link href="/">
-              <p className="text-p font-medium leading-6 text-secondary">
-                Home
-              </p>
+              <p className=" font-medium leading-6 text-accent">Home</p>
             </Link>
             <Link href="/">
-              <div className="text-p font-medium leading-6 text-secondary">
-                Coaches
-              </div>
+              <p className=" font-medium leading-6 text-accent">Coaches</p>
             </Link>
             <Link href="/">
-              <div className="text-p font-medium leading-6 text-secondary">
-                Pricing
-              </div>
+              <p className=" font-medium leading-6 text-accent">Pricing</p>
             </Link>
             <Link href="/">
-              <div className="text-p font-medium leading-6 text-secondary">
-                Programmes
-              </div>
+              <p className=" font-medium leading-6 text-accent">Programmes</p>
             </Link>
             <Link href="/">
-              <div className="text-p font-medium leading-6 text-secondary">
-                Support
-              </div>
+              <p className=" font-medium  leading-6 text-accent">Support</p>
             </Link>
           </div>
 
           <div>
             <Link href="/">
-              <div className="flex h-[46px] w-[104px] items-center justify-center rounded-[24px] bg-accent text-p font-semibold leading-6 text-primary">
+              <p className="flex h-[46px] w-[104px] items-center justify-center rounded-[24px] bg-accent font-semibold leading-6 text-primary">
                 Login
-              </div>
+              </p>
             </Link>
           </div>
         </div>
       </div>
 
-      <button className="mx-4 bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">
-        ...
-      </button>
-
-      <div className="main-heading px-[100px] pt-[70px]">
-        <div className="text-[75px] text-h1 font-bold text-primary">
-          Grounds
-        </div>
-        <div className="text-[75px] text-h1 font-bold text-primary">
-          New Year
-        </div>
-        <div className="text-[75px] text-h1 font-bold text-primary">
-          Challange
-        </div>
+      <div className="main-heading px-[100px] pt-[50px]">
+        <h1 className="text-[75px] text-primary">Grounds</h1>
+        <h1 className="text-[75px] text-primary">New Year</h1>
+        <h1 className="text-[75px] text-primary">Challange</h1>
       </div>
 
       <div className="footer-para-main-div px-[100px] pt-[22px]">
-        <div className="text-[18px] font-normal text-primary">
+        <p className="text-[18px]  text-primary">
           Register now for the Grounds app
-        </div>
-        <div className="text-[18px] font-normal text-primary">
+        </p>
+        <p className="text-[18px] text-primary">
           and get{" "}
           <span className="text-20 font-bold text-primary">
             INSTANT ACCESS!
           </span>{" "}
-        </div>
+        </p>
         <div className=" relative left-[5%]">
           <Image src={lineSvg} alt="lineSvg" />
         </div>
 
         <div>
           <Link href="/">
-            <div className="mt-[30px] flex h-[52px] w-[226px] items-center justify-center rounded-[24px] bg-accentGreen text-[14px] font-medium text-white">
+            <p className="mt-[30px] flex h-[48px] w-[195px] items-center justify-center rounded-[24px] bg-accentGreen text-[14px] font-medium text-white">
               Start Your Free Trial
               <Image src={arrowSvg} alt="arrow" />
-            </div>
+            </p>
           </Link>
 
-          <div className="mt-5 flex flex-row items-center gap-4">
+          <div className="mt-10 flex flex-row items-center gap-4">
             <div className="flex flex-row gap-2">
               <Image className="" src={appleHealth} alt="appleHealth" />
               <Image className="" src={googleHealth} alt="googleHealth" />
