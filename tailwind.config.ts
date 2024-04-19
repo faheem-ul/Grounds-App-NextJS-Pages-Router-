@@ -17,10 +17,10 @@ module.exports = {
       colors: {
         primary: "rgb(242 238 230)",
         secondary: "rgb(163 136 113)",
+        accent: "#000000",
         accentGreen: "rgb(143 182 159)",
         darkBrown: "rgb(48 42 37)",
         blackOpacity: "rgb(169 164 161)",
-        accent: "#000000",
       },
       fontFamily: {
         heading: ["Arial", "sans-serif"],

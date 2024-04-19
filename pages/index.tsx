@@ -12,11 +12,11 @@ import videoSvg from "../public/video.svg";
 function Home() {
   return (
     <>
-      <div className=" mob:block hidden">
+      <div className=" hidden mob:block">
         <HomeResponsive />
       </div>
       <div
-        className="main-div mob:hidden h-[100vh] bg-cover"
+        className="main-div h-[100vh] bg-cover mob:hidden"
         style={{ backgroundImage: 'url("/Screenshot (55).png")' }}
       >
         <div className="px-[100px] pt-[35px] ">
@@ -44,7 +44,7 @@ function Home() {
             </div>
 
             <div>
-              <Link href="/">
+              <Link href="/login">
                 <p className="flex h-[46px] w-[104px] items-center justify-center rounded-[24px] bg-accent font-semibold leading-6 text-primary">
                   Login
                 </p>
