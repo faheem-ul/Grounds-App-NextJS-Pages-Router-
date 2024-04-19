@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import Hamburger from "./Hamburger";
+
 import homeImage from "../../public/Screenshot (56).jpg";
 import videoSvg from "../../public/video.svg";
 import appleHealth from "../../public/applehealth.svg";
@@ -12,6 +14,7 @@ function HomeResponsive() {
   return (
     <div className="main-div-home-responsive bg-[#e9e5dd] ">
       <div className="relative">
+        <Hamburger />
         <h1 className="absolute mt-[20px] pl-5 text-[38px] font-bold text-primary">
           Grounds
         </h1>
