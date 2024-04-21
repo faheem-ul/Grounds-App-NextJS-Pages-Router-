@@ -35,6 +35,13 @@ function Checkout() {
           </div>
           <SignupCards />
           <TraineeRefered />
+          <button type="submit" className="mt-4">
+            <Link href="/dashboard">
+              <p className="flex h-[56px]  items-center justify-center rounded-[24px] bg-darkBrown text-[16px] font-medium leading-[24px] text-white">
+                LogIn
+              </p>
+            </Link>
+          </button>
         </div>
       </div>
 
