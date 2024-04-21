@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import SignupCards from "../components/ui/SignupCards";
+import TraineeRefered from "../components/ui/TraineeReffered";
 
 import rightLine from "../public/checkoutright.svg";
 import appledownloadSvg from "../public/appledonwload.svg";
@@ -13,8 +14,8 @@ import oneSvg from "../public/one.svg";
 
 function Checkout() {
   return (
-    <div className=" flex bg-primary mob:flex-col-reverse ">
-      <div className=" flex h-[100vh] w-full justify-center py-6 mob:h-[56vh]">
+    <div className=" flex h-screen bg-primary mob:flex-col-reverse ">
+      <div className=" flex w-full justify-center overflow-y-scroll py-6 mob:h-[56vh]">
         <div className=" flex flex-col items-center">
           <div class="absolute left-[120px] right-2  top-[160px] block h-[76%] w-0 border border-dashed border-accentGreen mob:hidden "></div>
           <p class="plan-login-text md:block mb-[20px] ml-[20px] mt-[30px] text-[16px] font-normal leading-4 text-blackOpacity mob:mx-[20px]">
@@ -26,14 +27,21 @@ function Checkout() {
               Log In
             </Link>
           </p>
-          <div className=" mr-[270px] mt-[40px] flex items-center  gap-8 ">
+          <div className=" mr-[270px] flex items-center  gap-8 ">
             <Image src={oneSvg} alt="one svg" />
             <p className=" text-[20px] font-bold capitalize text-darkBrown mob:ml-0 mob:mt-0 mob:text-[18px]">
               Select subscription plan
             </p>
           </div>
-
           <SignupCards />
+          <TraineeRefered />
+          <button type="submit" className="mt-4">
+            <Link href="/dashboard">
+              <p className="flex h-[56px]  items-center justify-center rounded-[24px] bg-darkBrown text-[16px] font-medium leading-[24px] text-white">
+                LogIn
+              </p>
+            </Link>
+          </button>
         </div>
       </div>
 
@@ -43,7 +51,7 @@ function Checkout() {
         style={{
           backgroundImage: "url(/loginImage.png)",
         }}
-        className="flex h-[100vh] w-full justify-center rounded-tl-[40px] bg-cover bg-center bg-no-repeat mob:h-[56vh] mob:rounded-tl-[0px] mob:bg-contain mob:bg-top "
+        className="flex w-full justify-center rounded-tl-[40px] bg-cover bg-center bg-no-repeat mob:h-[56vh] mob:rounded-tl-[0px] mob:bg-contain mob:bg-top "
       >
         <div className=" absolute left-10 top-8 flex h-[40px] w-[40px] items-center justify-center rounded-[10px] border-[3px] border-opacity-[0.1] ">
           <Link href="/">
@@ -84,13 +92,13 @@ function Checkout() {
           </div>
         </div>
 
-        <div
+        {/* <div
           style={{
             backgroundImage:
               "linear-gradient(180deg, hsla(40,32%,93%,0), hsla(40,32%,93%,.63) 50.77%, #f2eee6)",
           }}
           className="absolute bottom-[0px] h-[350px] w-[50%] opacity-90 mob:top-[320px] mob:h-[200px] mob:w-full"
-        ></div>
+        ></div> */}
       </div>
     </div>
   );
