@@ -3,6 +3,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import SignupCards from "../components/ui/SignupCards";
+
 import rightLine from "../public/checkoutright.svg";
 import appledownloadSvg from "../public/appledonwload.svg";
 import googledownloadSvg from "../public/googledownload.svg";
@@ -12,10 +14,10 @@ import oneSvg from "../public/one.svg";
 function Checkout() {
   return (
     <div className=" flex bg-primary mob:flex-col-reverse ">
-      {/* <Image src={oneSvg} alt="one svg" /> */}
-      {/* <div className=" flex h-[100vh] w-full justify-center py-6 mob:h-[56vh]">
-        <div className="flex flex-col justify-center mob:justify-start">
-          <p class="plan-login-text text-caption md:block mb-[20px] ml-[20px] mt-[30px] text-[16px] font-normal leading-4 mob:mx-[20px]">
+      <div className=" flex h-[100vh] w-full justify-center py-6 mob:h-[56vh]">
+        <div className=" flex flex-col items-center">
+          <div class="absolute left-[120px] right-2  top-[160px] block h-[76%] w-0 border border-dashed border-accentGreen mob:hidden "></div>
+          <p class="plan-login-text md:block mb-[20px] ml-[20px] mt-[30px] text-[16px] font-normal leading-4 text-blackOpacity mob:mx-[20px]">
             Already have an account?{" "}
             <Link
               href="/login"
@@ -24,37 +26,16 @@ function Checkout() {
               Log In
             </Link>
           </p>
-          <div>
-            <form className="flex flex-col">
-              <input
-                type="email"
-                placeholder="Email"
-                className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[335px] mob:py-3"
-              />
-              <input
-                type="email"
-                placeholder="Password"
-                className=" text-bold mb-8 w-[400px] rounded-[24px] px-6 py-3 mob:w-[335px] mob:py-3"
-              />
-
-              <p className=" underline"> Forgot Password</p>
-              <p className=" mt-10 text-center text-blackOpacity mob:mt-8 mob:font-medium">
-                You don't have an account?{" "}
-                <span className="underline ">
-                  <Link href="/checkout">Sign Up</Link>
-                </span>
-              </p>
-              <button type="submit" className="mt-4">
-                <Link href="/dashboard">
-                  <p className="flex h-[56px]  items-center justify-center rounded-[24px] bg-darkBrown text-[16px] font-medium leading-[24px] text-white">
-                    LogIn
-                  </p>
-                </Link>
-              </button>
-            </form>
+          <div className=" mr-[270px] mt-[40px] flex items-center  gap-8 ">
+            <Image src={oneSvg} alt="one svg" />
+            <p className=" text-[20px] font-bold capitalize text-darkBrown mob:ml-0 mob:mt-0 mob:text-[18px]">
+              Select subscription plan
+            </p>
           </div>
+
+          <SignupCards />
         </div>
-      </div> */}
+      </div>
 
       {/*  */}
       {/*  */}
