@@ -3,16 +3,27 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import arrowbackSvg from "../public/arrowback.svg";
-import googledownloadSvg from "../public/googledownload.svg";
+import rightLine from "../public/checkoutright.svg";
 import appledownloadSvg from "../public/appledonwload.svg";
+import googledownloadSvg from "../public/googledownload.svg";
+import arrowbackSvg from "../public/arrowback.svg";
+import oneSvg from "../public/one.svg";
 
-function Login() {
+function Checkout() {
   return (
     <div className=" flex bg-primary mob:flex-col-reverse ">
-      <div className=" flex h-[100vh] w-full justify-center py-6 mob:h-[56vh]">
+      {/* <Image src={oneSvg} alt="one svg" /> */}
+      {/* <div className=" flex h-[100vh] w-full justify-center py-6 mob:h-[56vh]">
         <div className="flex flex-col justify-center mob:justify-start">
-          <h2 className=" pb-[35px] font-bold">Login</h2>
+          <p class="plan-login-text text-caption md:block mb-[20px] ml-[20px] mt-[30px] text-[16px] font-normal leading-4 mob:mx-[20px]">
+            Already have an account?{" "}
+            <Link
+              href="/login"
+              className=" cursor-pointer font-medium text-accentGreen underline"
+            >
+              Log In
+            </Link>
+          </p>
           <div>
             <form className="flex flex-col">
               <input
@@ -43,7 +54,7 @@ function Login() {
             </form>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/*  */}
       {/*  */}
@@ -55,21 +66,30 @@ function Login() {
       >
         <div className=" absolute left-10 top-8 flex h-[40px] w-[40px] items-center justify-center rounded-[10px] border-[3px] border-opacity-[0.1] ">
           <Link href="/">
-            <Image src={arrowbackSvg} alt="arrow back svg" />
+            {<Image src={arrowbackSvg} alt="arrow back svg" />}
           </Link>
         </div>
-        <Link href="/">
-          <p className=" absolute right-[100px] top-[80px] flex h-[44px] w-[104px] items-center justify-center rounded-[24px] bg-primary font-medium text-accent mob:hidden">
-            Home
-          </p>
-        </Link>
-        <div className="flex flex-col items-center justify-center">
-          <div>
-            <p className="text-[54px] font-bold uppercase text-primary">
-              Grounds
+        <div>
+          <Link href="/">
+            <p className=" absolute right-[200px] top-[80px] flex h-[44px] w-[104px] items-center justify-center rounded-[24px] font-bold text-white mob:hidden">
+              Home
             </p>
-            <p className="text-center leading-6 text-primary ">
-              Your new training grounds
+          </Link>
+          <Link href="/login">
+            <p className=" absolute right-[100px] top-[80px] flex h-[44px] w-[104px] items-center justify-center rounded-[24px] bg-primary font-medium text-accent mob:hidden">
+              Login
+            </p>
+          </Link>
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <div className=" flex flex-col items-center justify-center">
+            <h1 className="text-center font-extrabold text-primary">
+              Start Your 7-Day <br /> Free Trial
+            </h1>
+            <Image src={rightLine} alt="horizontal Line" />
+            <p class="mt-[24px] font-light text-white">
+              Register now for the Grounds app and get
+              <span class="font-semibold"> INSTANT ACCESS!</span>
             </p>
           </div>
 
@@ -95,4 +115,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Checkout;
