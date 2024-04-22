@@ -14,7 +14,7 @@ function AccountCard() {
           <p className="p-sm p-white font-semibold leading-5">Email</p>
           <p className="p-sm p-white font-semibold leading-5"></p>
         </div>
-        <div className="my-5 h-px border-0 bg-gray-200 "></div>
+        <div className="my-5 h-px border-0 "></div>
         <div className="flex w-full items-center justify-between">
           <p className="p-sm p-white font-semibold leading-5">Password</p>
           <p className="p-sm p-white font-semibold leading-5"></p>
