@@ -1,18 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
 
-// import AccountCard from "../ui/dashboardCards/AccountCard";
-// import ProfileCard from "../ui/dashboardCards/ProfileCard";
-// import PlanCard from "../ui/dashboardCards/PlanCard";
-// import PaymentCard from "../ui/dashboardCards/PaymentCard";
+import AccountCard from "@/components/ui/dashboardCards/AccountCard";
+import ProfileCard from "@/components/ui/dashboardCards/ProfileCard";
+import PlanCard from "@/components/ui/dashboardCards/PlanCard";
+import PaymentCard from "@/components/ui/dashboardCards/PaymentCard";
+
 import cameraIcon from "../public/cameraicon.svg";
 import androidsvg from "../public/balckfillgoogledownload.svg";
 import iossvg from "../public/blackfillappledownload.svg";
+import addIcon from "../public/addicon.svg";
 function Dashboard() {
   return (
     <div className="bg-primary">
       <div className="flex items-center justify-between px-[10%] py-6">
-        <div className="bg-yellow">
+        <div className="">
           <p className="text-[40px] font-bold text-darkBrown">
             <Link href="/">Grounds</Link>
           </p>
@@ -26,14 +28,19 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className="flex  items-center justify-center gap-[250px] text-center">
-        <div className=" flex items-center gap-6">
+      <div className="flex  items-center justify-center gap-[250px] text-center mob:flex-col mob:gap-10">
+        <div className=" flex items-center gap-6 mob:flex-col">
           <div className=" relative mt-[5%] flex h-[96px] w-[96px] justify-center rounded-full bg-black text-center ">
             <input
               type="file"
               className=" absolute left-[-30px] w-[110px] p-8 opacity-0 "
             />
             <Image src={cameraIcon} alt="camera icon" />
+            <Image
+              className=" absolute left-[63px] top-[69px]"
+              src={addIcon}
+              alt="add icon"
+            />
           </div>
           <p className="text-[20px] font-semibold leading-[28px] text-[#1E2534]">
             Welcome, ebook
@@ -41,7 +48,7 @@ function Dashboard() {
         </div>
 
         <div className=" flex flex-col">
-          <p className=" py-3 text-sm font-semibold text-blackOpacity">
+          <p className=" py-3 text-sm font-semibold text-blackOpacity mob:py-0">
             Download the app below and login in with the same <br></br>{" "}
             creditentials you just used to create your account
           </p>
@@ -52,14 +59,14 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-wrap justify-center gap-10 bg-black">
+      <div className="mt-10 flex flex-wrap justify-center gap-10 bg-primary pb-4">
         <div>
-          {/* <AccountCard /> */}
-          {/* <ProfileCard /> */}
+          <AccountCard />
+          <ProfileCard />
         </div>
         <div>
-          {/* <PlanCard /> */}
-          {/* <PaymentCard /> */}
+          <PlanCard />
+          <PaymentCard />
         </div>
       </div>
     </div>
