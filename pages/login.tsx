@@ -10,7 +10,7 @@ import appledownloadSvg from "../public/appledonwload.svg";
 function Login() {
   return (
     <div className=" flex bg-primary mob:flex-col-reverse ">
-      <div className=" flex h-[100vh] w-full justify-center py-6 mob:h-[56vh]">
+      <div className=" flex h-[100vh] w-[40%] justify-center py-6 mob:h-[56vh]">
         <div className="flex flex-col justify-center mob:justify-start">
           <h2 className=" pb-[35px] font-bold">Login</h2>
           <div>
@@ -51,7 +51,7 @@ function Login() {
         style={{
           backgroundImage: "url(/loginImage.png)",
         }}
-        className="flex h-[100vh] w-full justify-center rounded-tl-[40px] bg-cover bg-center bg-no-repeat mob:h-[56vh] mob:rounded-tl-[0px] mob:bg-contain mob:bg-top "
+        className="flex h-[100vh] w-[60%] justify-center rounded-tl-[40px] bg-cover bg-center bg-no-repeat mob:h-[56vh] mob:rounded-tl-[0px] mob:bg-contain mob:bg-top "
       >
         <div className=" absolute left-10 top-8 flex h-[40px] w-[40px] items-center justify-center rounded-[10px] border-[3px] border-opacity-[0.1] ">
           <Link href="/">
@@ -59,7 +59,7 @@ function Login() {
           </Link>
         </div>
         <Link href="/">
-          <p className=" absolute right-[100px] top-[80px] flex h-[44px] w-[104px] items-center justify-center rounded-[24px] bg-primary font-medium text-accent mob:hidden">
+          <p className=" absolute right-[65px] top-[35px] flex h-[44px] w-[104px] items-center justify-center rounded-[24px] bg-primary font-medium text-accent mob:hidden">
             Home
           </p>
         </Link>
@@ -88,7 +88,7 @@ function Login() {
             backgroundImage:
               "linear-gradient(180deg, hsla(40,32%,93%,0), hsla(40,32%,93%,.63) 50.77%, #f2eee6)",
           }}
-          className="absolute bottom-[0px] h-[350px] w-[50%] opacity-90 mob:top-[320px] mob:h-[200px] mob:w-full"
+          className="absolute bottom-[0px] h-[350px] w-[60%] opacity-90 mob:top-[320px] mob:h-[200px] mob:w-full"
         ></div>
       </div>
     </div>

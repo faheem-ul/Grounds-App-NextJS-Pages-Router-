@@ -15,9 +15,14 @@ import oneSvg from "../public/one.svg";
 function Checkout() {
   return (
     <div className=" flex h-screen bg-primary mob:flex-col-reverse ">
-      <div className=" relative flex w-full justify-center overflow-y-scroll py-6 mob:h-[56vh]">
+      <div className=" relative flex w-[40%] justify-center overflow-y-scroll py-6 mob:h-[56vh] mob:w-full">
+        <div className=" absolute left-[20px] top-[30px] flex h-[40px] w-[40px] items-center justify-center rounded-[10px] border-[3px] border-opacity-[0.1] mob:hidden ">
+          <Link href="/">
+            <Image src={arrowbackSvg} alt="arrow back svg" />
+          </Link>
+        </div>
         <div className=" mt-[50px] flex flex-col items-center mob:mt-0">
-          {/* <div class="fixed left-[120px]  top-[160px] block h-[76%] w-0 border border-dashed border-accentGreen mob:hidden "></div> */}
+          <div class="absolute left-[35px]  top-[210px] block h-[76%] w-0 border border-dashed border-accentGreen mob:hidden "></div>
           <p class="sticky-login-text md:block mb-[20px] ml-[20px] mt-[30px] text-[16px] font-normal leading-4 text-blackOpacity mob:mx-[20px]">
             Already have an account?{" "}
             <Link
@@ -37,12 +42,12 @@ function Checkout() {
           <TraineeRefered />
           <button type="submit" className="mt-4">
             <Link href="/signup">
-              <p className="flex h-[56px] w-[433px] items-center justify-center rounded-[24px] bg-darkBrown text-[16px] font-medium leading-[24px] text-white mob:w-[392px]">
+              <p className="mt-[42px] flex h-[56px] w-[433px] items-center justify-center rounded-[24px] bg-accentGreen text-[16px] font-medium leading-[24px] text-white mob:mt-0 mob:w-[392px]">
                 Continue To Create Account
               </p>
             </Link>
           </button>
-          <div class=" mt-[18px] text-center text-[11px] font-normal leading-[20px] text-blackOpacity">
+          <div class=" mt-[18px] pb-16 text-center text-[11px] font-normal leading-[20px] text-blackOpacity">
             At the end of your free trial your subscription will automatically
             <br />
             rollover to a $99.99/year subscription billed annually unless
@@ -61,8 +66,13 @@ function Checkout() {
         style={{
           backgroundImage: "url(/loginImage.png)",
         }}
-        className="flex w-full justify-center rounded-tl-[40px] bg-cover bg-center bg-no-repeat mob:h-[56vh] mob:rounded-tl-[0px] mob:bg-top "
+        className="flex w-[60%] justify-center rounded-tl-[40px] bg-cover bg-center bg-no-repeat mob:h-[56vh] mob:w-full mob:rounded-tl-[0px] mob:bg-top"
       >
+        <div className=" absolute left-[20px] top-[30px] hidden h-[40px] w-[40px] items-center justify-center rounded-[10px] border-[3px] border-opacity-[0.1] mob:flex ">
+          <Link href="/">
+            <Image src={arrowbackSvg} alt="arrow back svg" />
+          </Link>
+        </div>
         <div className=" absolute left-10 top-8 hidden  h-[40px] w-[40px] items-center justify-center rounded-[10px] border-[3px] border-opacity-[0.1] ">
           <Link href="/">
             {<Image src={arrowbackSvg} alt="arrow back svg" />}
@@ -107,7 +117,7 @@ function Checkout() {
             backgroundImage:
               "linear-gradient(180deg, hsla(40,32%,93%,0), hsla(40,32%,93%,.63) 50.77%, #f2eee6)",
           }}
-          className="absolute bottom-[0px] h-[350px] w-[50%] opacity-90 mob:top-[320px] mob:h-[200px] mob:w-full"
+          className="absolute bottom-[0px] h-[350px] w-[60%] opacity-90 mob:top-[320px] mob:h-[200px] mob:w-full"
         ></div>
       </div>
     </div>
