@@ -9,7 +9,7 @@ function TraineeReffered() {
   return (
     <div>
       <div
-        className="flex w-[433px] cursor-pointer items-center justify-between rounded-2xl border-2 border-[#a8a4a166] bg-white p-2 px-4"
+        className="flex w-[433px] cursor-pointer items-center justify-between rounded-2xl border-2 border-[#a8a4a166] bg-white p-2 px-4 mob:w-[392px]"
         onClick={toggleContent}
       >
         <p className="text-[13px] text-blackOpacity">Trainer referred by</p>

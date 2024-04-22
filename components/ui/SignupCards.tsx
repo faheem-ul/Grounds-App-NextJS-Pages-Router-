@@ -24,7 +24,7 @@ function SignupCards() {
         className="mb-6 mt-8 flex cursor-pointer rounded-[20px] border-2 border-accentGreen bg-white"
         onClick={handlefirstcardExpand}
       >
-        <div className="w-[433px] py-4">
+        <div className=" w-[433px] py-4 mob:w-[392px]">
           <div className="leading-[18px]my-1 flex items-center px-6 text-sm  font-bold">
             {/* <Image src={annaulsvg} alt="" /> */}
             <p className="text-[14px] font-semibold text-black mob:font-semibold">
@@ -129,7 +129,7 @@ function SignupCards() {
         className="mb-6 flex cursor-pointer rounded-[20px] border-2 border-accentGreen bg-white"
         onClick={handlesecondcardExpand}
       >
-        <div className="w-[433px] py-4">
+        <div className="w-[433px] py-4 mob:w-[392px]">
           <div className="leading-[18px]my-1 flex items-center px-6 text-sm  font-bold">
             {/* <Image src={annaulsvg} alt="" /> */}
             <p className="text-[14px] font-semibold text-black mob:font-semibold">
