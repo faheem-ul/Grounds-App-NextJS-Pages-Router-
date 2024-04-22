@@ -33,7 +33,7 @@ function PlanDrawer() {
             className="fixed right-0 top-0 h-full w-full bg-black opacity-50"
             onClick={toggleContent}
           ></div>
-          <div className=" no-scrollbar fixed bottom-0 right-0 z-[50] flex h-[100vh] w-[30%] justify-center  overflow-y-scroll  rounded-tl-[20px] bg-white px-5 py-[40px] mob:bottom-[40%] mob:h-[50vh] mob:w-full ">
+          <div className=" no-scrollbar fixed bottom-0 right-0 z-[50] flex h-[100vh] w-[30%] justify-center  overflow-y-scroll  rounded-tl-[20px] bg-primary px-5 py-[40px] mob:bottom-[40%] mob:h-[50vh] mob:w-full mob:rounded-[24px] ">
             <button className="border-[#292D32 hover:bg-gray-200] absolute right-5 top-5  rounded-lg border-2 p-2">
               <Image
                 alt="closeIcon"
