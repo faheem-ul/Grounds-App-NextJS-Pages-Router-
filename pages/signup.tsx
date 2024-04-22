@@ -6,23 +6,26 @@ import Image from "next/image";
 import arrowbackSvg from "../public/arrowback.svg";
 import appledownloadSvg from "../public/appledonwload.svg";
 import googledownloadSvg from "../public/googledownload.svg";
+import twoSvg from "../public/two.svg";
+import threeSvg from "../public/three.svg";
 import errorSvg from "../public/error.svg";
 
 function Signup() {
   return (
     <div className=" flex h-screen bg-primary mob:flex-col-reverse ">
-      <div className=" flex w-full justify-center overflow-y-scroll py-6 mob:h-[56vh]">
-        <div className="flex flex-col ">
-          <p className="sticky-login-text  mt-[30px] hidden text-[16px] font-normal leading-4 text-blackOpacity mob:block ">
-            Already have an account?{" "}
-            <Link
-              href="/login"
-              className=" cursor-pointer font-medium text-accentGreen underline"
-            />
-          </p>
-          <h2 className=" mt-[95px] pb-[16px] text-[20px] font-semibold mob:mt-[50px]">
-            Your Information
-          </h2>
+      <div className=" relative flex w-[40%] justify-center overflow-y-scroll py-6 mob:h-[56vh] mob:w-full mob:justify-end">
+        <div className=" absolute left-[20px] top-[30px] flex h-[40px] w-[40px] items-center justify-center rounded-[10px] border-[3px] border-opacity-[0.1] mob:hidden ">
+          <Link href="/">
+            <Image src={arrowbackSvg} alt="arrow back svg" />
+          </Link>
+        </div>
+        <div className=" ">
+          <div className="absolute left-[70px]  top-[150px] block h-[46%] w-0 border border-dashed border-accentGreen mob:hidden "></div>
+
+          <div className=" ml-[-42px] mt-[95px] flex items-center gap-2 pb-[16px] mob:ml-0 mob:mt-[50px]">
+            <Image src={twoSvg} alt="twoSvg" />
+            <h2 className="   text-[20px] font-bold ">Your Information</h2>
+          </div>
           <div className=" mb-[10px] flex items-center gap-3">
             <Image src={errorSvg} alt="error svg" />
             <p className="text-dark-brown  text-[12px] font-normal leading-[26px]">
@@ -34,44 +37,47 @@ function Signup() {
               <input
                 type="text"
                 placeholder="First Name "
-                className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[335px] mob:py-3"
+                className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[360px] mob:py-3"
               />
               <input
                 type="text"
                 placeholder="Last Name"
-                className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[335px] mob:py-3"
+                className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[360px] mob:py-3"
               />
               <input
                 type="email"
                 placeholder="Email"
-                className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[335px] mob:py-3"
+                className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[360px] mob:py-3"
               />
               <input
                 type="password"
                 placeholder="Password"
-                className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[335px] mob:py-3"
+                className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[360px] mob:py-3"
               />
-              <h2 className=" mt-[32px] pb-[16px] text-[20px] font-semibold">
-                Payment Details
-              </h2>
+
+              <div className="ml-[-42px] mt-[32px] flex items-center gap-2 pb-[16px] mob:ml-0">
+                <Image src={threeSvg} alt="threesvg" />
+                <h2 className="  text-[20px] font-bold">Payment Details</h2>
+              </div>
+              <div className=" absolute  left-[70px]  top-[500px] block h-[36%] w-0 border border-dashed border-accentGreen mob:hidden "></div>
 
               <div>
                 <form className="flex flex-col">
                   <input
                     type="text"
                     placeholder="1234 1234 1234 1234"
-                    className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[335px] mob:py-3"
+                    className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[360px] mob:py-3"
                   />
                   <div className=" flex gap-[10px]">
                     <input
                       type="text"
                       placeholder="MM/YY"
-                      className=" text-bold mb-8 w-[195px] rounded-[24px] px-6 py-3  mob:py-3"
+                      className=" text-bold mb-8 w-[195px] rounded-[24px] px-6 py-3  mob:w-[175px] mob:py-3"
                     />
                     <input
                       type="text"
                       placeholder="CVC"
-                      className=" text-bold mb-8 w-[195px] rounded-[24px] px-6 py-3 mob:py-3"
+                      className=" text-bold mb-8 w-[195px] rounded-[24px] px-6 py-3 mob:w-[175px] mob:py-3"
                     />
                   </div>
                 </form>
@@ -115,9 +121,9 @@ function Signup() {
         style={{
           backgroundImage: "url(/loginImage.png)",
         }}
-        className="flex h-[100vh] w-full justify-center rounded-tl-[40px] bg-cover bg-center bg-no-repeat mob:h-[56vh] mob:rounded-tl-[0px]    mob:bg-top "
+        className=" relative flex h-[100vh] w-[60%] justify-center rounded-tl-[40px] bg-cover bg-center bg-no-repeat mob:h-[56vh] mob:w-full mob:rounded-tl-[0px]   mob:bg-top "
       >
-        <div className=" absolute left-10 top-8 flex h-[40px] w-[40px] items-center justify-center rounded-[10px] border-[3px] border-opacity-[0.1] ">
+        <div className=" absolute left-[20px] top-[30px]  hidden h-[40px] w-[40px] items-center justify-center rounded-[10px] border-[3px] border-opacity-[0.1] mob:flex">
           <Link href="/">
             <Image src={arrowbackSvg} alt="arrow back svg" />
           </Link>
@@ -152,7 +158,7 @@ function Signup() {
             backgroundImage:
               "linear-gradient(180deg, hsla(40,32%,93%,0), hsla(40,32%,93%,.63) 50.77%, #f2eee6)",
           }}
-          className="absolute bottom-[0px] h-[350px] w-[50%] opacity-90 mob:top-[320px] mob:h-[200px] mob:w-full"
+          className="absolute bottom-[0px] h-[350px] w-[100%] opacity-90 mob:top-[320px] mob:h-[200px] mob:w-full"
         ></div>
       </div>
     </div>

@@ -21,9 +21,9 @@ function Home() {
       >
         <div className="px-[100px] pt-[35px] ">
           <div className="nav-main-div flex flex-row items-center justify-between rounded-[37px] bg-primary px-[50px] py-[10px] ">
-            <div>
-              <h2 className="font-bold text-accent">GROUNDS</h2>
-            </div>
+            <Link href="/">
+              <h2 className="cursor-pointer font-bold text-accent">GROUNDS</h2>
+            </Link>
 
             <div className="flex flex-row gap-9">
               <Link href="/">
