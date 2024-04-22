@@ -8,7 +8,6 @@ function AccountCard() {
       <div className="flex w-full items-center justify-between">
         <p className="p-xl p-white font-bold leading-6">My Account</p>
         <AccountDrawer />
-        {/* <p className="p-base p-[#ff7565] font-semibold  leading-6">Edit</p> */}
       </div>
       <div className="mt-6  shrink-0 rounded-[24px] bg-white px-6 py-6 ">
         <div className="flex w-full items-center justify-between">

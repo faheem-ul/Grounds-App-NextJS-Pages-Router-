@@ -59,7 +59,7 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-wrap justify-center gap-10 bg-primary pb-4">
+      <div className="mt-10 flex flex-wrap items-baseline justify-center gap-14 bg-primary pb-4">
         <div>
           <AccountCard />
           <ProfileCard />
