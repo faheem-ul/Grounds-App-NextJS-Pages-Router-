@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Image from "next/image";
 
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { setDoc, doc } from "firebase/firestore";
+
+import { auth } from "../firebaseConfig";
+import { db } from "../firebaseConfig";
 import arrowbackSvg from "../public/arrowback.svg";
 import appledownloadSvg from "../public/appledonwload.svg";
 import googledownloadSvg from "../public/googledownload.svg";
@@ -11,6 +17,48 @@ import threeSvg from "../public/three.svg";
 import errorSvg from "../public/error.svg";
 
 function Signup() {
+  const router = useRouter();
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignupSubmit = async () => {
+    if (
+      firstName === "" ||
+      lastName === "" ||
+      email === "" ||
+      password === ""
+    ) {
+      alert("Please fill all the fields");
+    } else {
+      try {
+        const userCredentials = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password,
+        );
+        // console.log(userCredentials);
+        const uid = userCredentials.user.uid;
+        console.log(uid);
+
+        const userdata = {
+          FirstName: firstName,
+          LastName: lastName,
+          Email: email,
+          Password: password,
+        };
+
+        await setDoc(doc(db, "signups", uid), userdata);
+
+        router.push("/dashboard");
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  };
+
   return (
     <div className=" flex h-screen bg-primary mob:flex-col-reverse ">
       <div className=" relative flex w-[40%] justify-center overflow-y-scroll py-6 mob:h-[56vh] mob:w-full mob:justify-end">
@@ -33,28 +81,52 @@ function Signup() {
             </p>
           </div>
           <div>
-            <form className="flex flex-col">
-              <input
-                type="text"
-                placeholder="First Name "
-                className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[360px] mob:py-3"
-              />
-              <input
-                type="text"
-                placeholder="Last Name"
-                className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[360px] mob:py-3"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[360px] mob:py-3"
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[360px] mob:py-3"
-              />
-
+            <div className="flex flex-col">
+              <form
+                className="flex flex-col"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleSignupSubmit();
+                }}
+              >
+                <input
+                  type="text"
+                  placeholder="First Name "
+                  className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[360px] mob:py-3"
+                  onChange={(e) => {
+                    setFirstName(e.target.value);
+                  }}
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[360px] mob:py-3"
+                  onChange={(e) => {
+                    setLastName(e.target.value);
+                  }}
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[360px] mob:py-3"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[360px] mob:py-3"
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                />
+                <button type="submit" className="mt-4">
+                  <p className="flex h-[56px] items-center justify-center rounded-[24px] bg-black text-[16px] font-medium leading-[24px] text-white mob:w-[392px]">
+                    Sample Login
+                  </p>
+                </button>
+              </form>
               <div className="ml-[-42px] mt-[32px] flex items-center gap-2 pb-[16px] mob:ml-0">
                 <Image src={threeSvg} alt="threesvg" />
                 <h2 className="  text-[20px] font-bold">Payment Details</h2>
@@ -110,7 +182,7 @@ function Signup() {
                 <br />
                 Privacy Policy | Terms of service{" "}
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
