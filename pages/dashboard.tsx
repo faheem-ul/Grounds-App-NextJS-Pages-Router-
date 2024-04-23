@@ -1,5 +1,11 @@
+import { useContext } from "react";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { AuthContext } from "../context/AuthContext";
+
+import { auth } from "../firebaseConfig";
 
 import AccountCard from "@/components/ui/dashboardCards/AccountCard";
 import ProfileCard from "@/components/ui/dashboardCards/ProfileCard";
@@ -10,9 +16,23 @@ import cameraIcon from "../public/cameraicon.svg";
 import androidsvg from "../public/balckfillgoogledownload.svg";
 import iossvg from "../public/blackfillappledownload.svg";
 import addIcon from "../public/addicon.svg";
+
 function Dashboard() {
+  const { user } = useContext(AuthContext);
+  console.log("user", user);
+  // console.log(auth.onAuthStateChanged);
+
+  const router = useRouter();
+
+  const handleLogout = () => {
+    auth.signOut();
+    router.push("/");
+    console.log("logged out");
+  };
+
   return (
     <div className="bg-primary">
+      <h1>{user}</h1>
       <div className="flex items-center justify-between px-[10%] py-6">
         <div className="">
           <p className="text-[40px] font-bold text-darkBrown">
@@ -20,11 +40,12 @@ function Dashboard() {
           </p>
         </div>
         <div className="bg-red">
-          <Link href="/">
-            <button className="py-2 pr-3 text-[16px] font-semibold leading-6 tracking-[0.48px] text-darkBrown">
-              Log out
-            </button>
-          </Link>
+          <button
+            className="py-2 pr-3 text-[16px] font-semibold leading-6 tracking-[0.48px] text-darkBrown"
+            onClick={handleLogout}
+          >
+            Log out
+          </button>
         </div>
       </div>
 
