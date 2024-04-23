@@ -19,12 +19,15 @@ import errorSvg from "../public/error.svg";
 function Signup() {
   const router = useRouter();
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
   const handleSignupSubmit = async () => {
+    setError("");
+
     if (
       firstName === "" ||
       lastName === "" ||
@@ -53,7 +56,8 @@ function Signup() {
         await setDoc(doc(db, "signups", uid), userdata);
 
         router.push("/dashboard");
-      } catch (err) {
+      } catch (err: any) {
+        setError(err.message);
         console.log(err);
       }
     }
@@ -126,6 +130,11 @@ function Signup() {
                     Sample Login
                   </p>
                 </button>
+                {error && (
+                  <p className="mt-4 text-center text-[14px] font-normal leading-[18px] text-blackOpacity">
+                    {error}
+                  </p>
+                )}
               </form>
               <div className="ml-[-42px] mt-[32px] flex items-center gap-2 pb-[16px] mob:ml-0">
                 <Image src={threeSvg} alt="threesvg" />
