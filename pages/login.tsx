@@ -1,29 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Image from "next/image";
+
+import { signInWithEmailAndPassword } from "firebase/auth";
+
+import { auth } from "../firebaseConfig";
 
 import arrowbackSvg from "../public/arrowback.svg";
 import googledownloadSvg from "../public/googledownload.svg";
 import appledownloadSvg from "../public/appledonwload.svg";
+import { log } from "console";
 
 function Login() {
+  const router = useRouter();
+  const [loginEmail, setLoginEmail] = useState<string>("");
+  const [loginPassword, setLoginPassword] = useState<string>("");
+
+  const handleLoginFormSubmit = async () => {
+    if (loginEmail === "" || loginPassword === "") {
+      alert("Please enter all the fields");
+    } else {
+      try {
+        const loginUserCredentials = await signInWithEmailAndPassword(
+          auth,
+          loginEmail,
+          loginPassword,
+        );
+        console.log("login successful");
+
+        router.push("/dashboard");
+      } catch (error) {
+        console.log("error in login", error);
+      }
+    }
+  };
+
   return (
     <div className=" flex bg-primary mob:flex-col-reverse ">
       <div className=" flex h-[100vh] w-[40%] justify-center py-6 mob:h-[56vh]">
         <div className="flex flex-col justify-center mob:justify-start">
           <h2 className=" pb-[35px] font-bold">Login</h2>
           <div>
-            <form className="flex flex-col">
+            <form
+              className="flex flex-col"
+              onSubmit={(e) => {
+                e.preventDefault();
+                {
+                  handleLoginFormSubmit();
+                }
+              }}
+            >
               <input
                 type="email"
                 placeholder="Email"
                 className=" text-bold mb-3 w-[400px] rounded-[24px] px-6 py-3 mob:w-[335px] mob:py-3"
+                onChange={(e) => {
+                  setLoginEmail(e.target.value);
+                }}
               />
               <input
-                type="email"
+                type="password"
                 placeholder="Password"
                 className=" text-bold mb-8 w-[400px] rounded-[24px] px-6 py-3 mob:w-[335px] mob:py-3"
+                onChange={(e) => {
+                  setLoginPassword(e.target.value);
+                }}
               />
 
               <p className=" underline"> Forgot Password</p>
@@ -34,11 +77,9 @@ function Login() {
                 </span>
               </p>
               <button type="submit" className="mt-4">
-                <Link href="/dashboard">
-                  <p className="flex h-[56px]  items-center justify-center rounded-[24px] bg-darkBrown text-[16px] font-medium leading-[24px] text-white">
-                    LogIn
-                  </p>
-                </Link>
+                <p className="flex h-[56px]  items-center justify-center rounded-[24px] bg-darkBrown text-[16px] font-medium leading-[24px] text-white">
+                  LogIn
+                </p>
               </button>
             </form>
           </div>
