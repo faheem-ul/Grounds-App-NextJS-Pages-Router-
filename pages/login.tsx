@@ -11,14 +11,16 @@ import { auth } from "../firebaseConfig";
 import arrowbackSvg from "../public/arrowback.svg";
 import googledownloadSvg from "../public/googledownload.svg";
 import appledownloadSvg from "../public/appledonwload.svg";
-import { log } from "console";
+import { error, log } from "console";
 
 function Login() {
   const router = useRouter();
   const [loginEmail, setLoginEmail] = useState<string>("");
   const [loginPassword, setLoginPassword] = useState<string>("");
+  const [loginError, setLoginError] = useState<string>("");
 
   const handleLoginFormSubmit = async () => {
+    setLoginError("");
     if (loginEmail === "" || loginPassword === "") {
       alert("Please enter all the fields");
     } else {
@@ -31,7 +33,8 @@ function Login() {
         console.log("login successful");
 
         router.push("/dashboard");
-      } catch (error) {
+      } catch (error: any) {
+        setLoginError(error.message);
         console.log("error in login", error);
       }
     }
@@ -81,6 +84,11 @@ function Login() {
                   LogIn
                 </p>
               </button>
+              {loginError && (
+                <p className="mt-4 text-center text-[14px] font-normal leading-[18px] text-blackOpacity">
+                  {loginError}
+                </p>
+              )}
             </form>
           </div>
         </div>
