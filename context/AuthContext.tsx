@@ -1,27 +1,41 @@
-"client side";
-
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { useState } from "react";
-
-import { auth } from "../firebaseConfig";
-
 import PropTypes from "prop-types";
 import { User } from "firebase/auth";
 
+import { auth } from "../firebaseConfig";
+
 interface AuthContextType {
-  user: string;
+  user: User | null;
+  loading: boolean;
 }
 
 export const AuthContext = React.createContext<AuthContextType>({
-  user: "",
+  user: null,
+  loading: false,
 });
 
 function AuthProvider({ children }: any) {
-  const [user, setUser] = useState<string>("ok");
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  // setUser("ok");
+  useLayoutEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
-    <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ user, loading }}>
+      {children}
+    </AuthContext.Provider>
   );
 }
 

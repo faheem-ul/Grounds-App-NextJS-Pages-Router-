@@ -72,7 +72,7 @@ function Signup() {
           </Link>
         </div>
         <div className=" ">
-          <div className="absolute left-[70px]  top-[150px] block h-[46%] w-0 border border-dashed border-accentGreen mob:hidden "></div>
+          <div className="absolute left-[70px]  top-[150px] block h-[56.5%] w-0 border border-dashed border-accentGreen mob:hidden "></div>
 
           <div className=" ml-[-42px] mt-[95px] flex items-center gap-2 pb-[16px] mob:ml-0 mob:mt-[50px]">
             <Image src={twoSvg} alt="twoSvg" />
@@ -140,7 +140,7 @@ function Signup() {
                 <Image src={threeSvg} alt="threesvg" />
                 <h2 className="  text-[20px] font-bold">Payment Details</h2>
               </div>
-              <div className=" absolute  left-[70px]  top-[500px] block h-[36%] w-0 border border-dashed border-accentGreen mob:hidden "></div>
+              <div className=" absolute  left-[70px]  top-[580px] block h-[36%] w-0 border border-dashed border-accentGreen mob:hidden "></div>
 
               <div>
                 <form className="flex flex-col">
