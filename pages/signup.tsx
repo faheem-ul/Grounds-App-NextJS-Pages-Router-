@@ -248,6 +248,6 @@ function Signup() {
 
 export default Signup;
 
-Signup.getLayout = function (page: any) {
+Signup.privateLayout = function (page: any) {
   return <>{page}</>;
 };

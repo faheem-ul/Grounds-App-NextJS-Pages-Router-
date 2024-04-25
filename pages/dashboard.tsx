@@ -7,7 +7,7 @@ import { AuthContext } from "../context/AuthContext";
 
 import { auth } from "../firebaseConfig";
 
-import PrivateRoutes from "../components/Layouts/PrivateRoutes";
+import PrivateRoutes from "../components/Layouts/PrivateLayout/PrivateRoutes";
 
 import AccountCard from "@/components/ui/dashboardCards/AccountCard";
 import ProfileCard from "@/components/ui/dashboardCards/ProfileCard";
@@ -18,7 +18,7 @@ import cameraIcon from "../public/cameraicon.svg";
 import androidsvg from "../public/balckfillgoogledownload.svg";
 import iossvg from "../public/blackfillappledownload.svg";
 import addIcon from "../public/addicon.svg";
-import PrivateLayout from "@/components/Layouts/PrivateLayout";
+import PrivateLayout from "@/components/Layouts/PrivateLayout/PrivateLayout";
 
 function Dashboard() {
   const { user } = useContext(AuthContext);
@@ -94,10 +94,11 @@ function Dashboard() {
         </div>
       </div>
     </div>
-    /* </PrivateRoutes> */
+    // /* </PrivateRoutes> */
   );
 }
 
-Dashboard.layout = PrivateLayout;
-
 export default Dashboard;
+Dashboard.privateLayout = function (page: any) {
+  return <>{page}</>;
+};

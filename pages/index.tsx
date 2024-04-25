@@ -16,7 +16,7 @@ function Home() {
         <HomeResponsive />
       </div>
       <div
-        className="main-div h-[100vh] bg-cover mob:hidden"
+        className="main-div h-[] w-full overflow-hidden bg-cover mob:hidden"
         style={{ backgroundImage: 'url("/Screenshot (55).png")' }}
       >
         <div className="px-[100px] pt-[35px] ">
@@ -97,7 +97,7 @@ function Home() {
               </p>
             </Link>
 
-            <div className="mt-10 flex flex-row items-center gap-4">
+            <div className="mt-10 flex flex-row items-center gap-4 py-4">
               <div className="flex flex-row gap-2">
                 <Image className="" src={appleHealth} alt="appleHealth" />
                 <Image className="" src={googleHealth} alt="googleHealth" />
@@ -110,8 +110,6 @@ function Home() {
               </div>
             </div>
           </div>
-
-          <div></div>
         </div>
       </div>
     </>
@@ -119,3 +117,7 @@ function Home() {
 }
 
 export default Home;
+
+Home.footerLayout = function (page: any) {
+  return <>{page}</>;
+};
