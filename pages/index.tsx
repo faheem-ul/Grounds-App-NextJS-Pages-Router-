@@ -20,6 +20,13 @@ function Home() {
         style={{ backgroundImage: 'url("/Screenshot (55).png")' }}
       >
         <div className="px-[100px] pt-[35px] ">
+          {/* <video
+            autoPlay
+            loop
+            muted
+            className=" "
+            src="https://firebasestorage.googleapis.com/v0/b/grounds-4c8d1.appspot.com/o/grounds-web%2FWebsite%20Horizontal%20Action%20Shots%20Final%20COMPRESSED%20(no%20sound).mp4?alt=media&token=7a15b1e2-207d-464c-a690-6b13c826853e"
+          ></video> */}
           <div className="nav-main-div flex flex-row items-center justify-between rounded-[37px] bg-primary px-[50px] py-[10px] ">
             <Link href="/">
               <h2 className="cursor-pointer font-bold text-accent">GROUNDS</h2>
