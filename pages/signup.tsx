@@ -247,3 +247,7 @@ function Signup() {
 }
 
 export default Signup;
+
+Signup.getLayout = function (page: any) {
+  return <>{page}</>;
+};

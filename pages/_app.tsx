@@ -71,17 +71,21 @@
 
 import type { AppProps } from "next/app";
 
-import PrivateRoutes from "./PrivateRoutes";
+import PrivateRoutes from "../components/Layouts/PrivateRoutes";
 
 import "@/styles/globals.css";
 import AuthProvider from "@/context/AuthContext";
 
+import PrivateLayout from "@/components/Layouts/PrivateLayout";
+
 export default function App({ Component, pageProps }: AppProps) {
+  if (Component.getLayout) {
+    return Component.getLayout(<Component {...pageProps} />);
+  }
+
   return (
-    <AuthProvider>
-      <PrivateRoutes>
-        <Component {...pageProps} />
-      </PrivateRoutes>
-    </AuthProvider>
+    <PrivateLayout>
+      <Component {...pageProps} />
+    </PrivateLayout>
   );
 }

@@ -7,7 +7,7 @@ import { AuthContext } from "../context/AuthContext";
 
 import { auth } from "../firebaseConfig";
 
-import PrivateRoutes from "./PrivateRoutes";
+import PrivateRoutes from "../components/Layouts/PrivateRoutes";
 
 import AccountCard from "@/components/ui/dashboardCards/AccountCard";
 import ProfileCard from "@/components/ui/dashboardCards/ProfileCard";
@@ -18,10 +18,11 @@ import cameraIcon from "../public/cameraicon.svg";
 import androidsvg from "../public/balckfillgoogledownload.svg";
 import iossvg from "../public/blackfillappledownload.svg";
 import addIcon from "../public/addicon.svg";
+import PrivateLayout from "@/components/Layouts/PrivateLayout";
 
 function Dashboard() {
   const { user } = useContext(AuthContext);
-  // console.log("user", user);
+  console.log("user", user);
   // console.log(auth.onAuthStateChanged);
 
   const router = useRouter();
@@ -33,6 +34,7 @@ function Dashboard() {
   };
 
   return (
+    // <PrivateRoutes>
     <div className="bg-primary">
       <div className="flex items-center justify-between px-[10%] py-6">
         <div className="">
@@ -92,7 +94,10 @@ function Dashboard() {
         </div>
       </div>
     </div>
+    /* </PrivateRoutes> */
   );
 }
+
+Dashboard.layout = PrivateLayout;
 
 export default Dashboard;
