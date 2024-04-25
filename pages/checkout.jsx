@@ -125,3 +125,7 @@ function Checkout() {
 }
 
 export default Checkout;
+
+Checkout.getLayout = function (page) {
+  return <>{page}</>;
+};

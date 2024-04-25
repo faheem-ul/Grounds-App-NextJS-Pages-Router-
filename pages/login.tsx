@@ -12,6 +12,7 @@ import arrowbackSvg from "../public/arrowback.svg";
 import googledownloadSvg from "../public/googledownload.svg";
 import appledownloadSvg from "../public/appledonwload.svg";
 import { error, log } from "console";
+import Signup from "./signup";
 
 function Login() {
   const router = useRouter();
@@ -108,7 +109,7 @@ function Login() {
           </Link>
         </div>
         <Link href="/">
-          <p className=" absolute right-[65px] top-[35px] flex h-[44px] w-[104px] items-center justify-center rounded-[24px] bg-primary font-medium text-accent mob:hidden">
+          <p className=" absolute right-[65px] top-[35px] flex h-[44px] w-[104px] cursor-pointer items-center justify-center rounded-[24px] bg-primary font-medium text-accent mob:hidden">
             Home
           </p>
         </Link>
@@ -145,3 +146,6 @@ function Login() {
 }
 
 export default Login;
+Login.privateLayout = function (page: any) {
+  return <>{page}</>;
+};

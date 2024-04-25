@@ -120,6 +120,6 @@ function Home() {
 
 export default Home;
 
-Home.getLayout = function (page: any) {
+Home.footerLayout = function (page: any) {
   return <>{page}</>;
 };
