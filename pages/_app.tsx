@@ -77,10 +77,17 @@ import "@/styles/globals.css";
 import AuthProvider from "@/context/AuthContext";
 
 import PrivateLayout from "@/components/Layouts/PrivateLayout";
+import PublicRoutes from "@/components/Layouts/PublicRoutes";
 
 export default function App({ Component, pageProps }: AppProps) {
   if (Component.getLayout) {
-    return Component.getLayout(<Component {...pageProps} />);
+    return Component.getLayout(
+      <AuthProvider>
+        <PublicRoutes>
+          <Component {...pageProps} />
+        </PublicRoutes>
+      </AuthProvider>,
+    );
   }
 
   return (

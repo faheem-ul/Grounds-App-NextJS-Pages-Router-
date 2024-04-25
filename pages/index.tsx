@@ -119,3 +119,7 @@ function Home() {
 }
 
 export default Home;
+
+Home.getLayout = function (page: any) {
+  return <>{page}</>;
+};
