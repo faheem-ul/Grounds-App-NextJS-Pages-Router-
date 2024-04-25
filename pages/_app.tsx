@@ -76,6 +76,14 @@ import "@/styles/globals.css";
 import PrivateLayout from "@/components/Layouts/PrivateLayout/PrivateLayout";
 import FooterLayout from "@/components/Layouts/FooterLayout/FooterLayout";
 import PublicLayout from "@/components/Layouts/PublicLayout/PublicLayout";
+
+interface AppPropsWithLayout extends AppProps {
+  Component: NextComponent & {
+    getLayout?: (page: JSX.Element) => JSX.Element;
+    footerLayout?: (page: JSX.Element) => JSX.Element;
+    privateLayout?: (page: JSX.Element) => JSX.Element;
+  };
+}
 export default function App({ Component, pageProps }: AppProps) {
   if (Component.getLayout) {
     return Component.getLayout(
@@ -93,17 +101,13 @@ export default function App({ Component, pageProps }: AppProps) {
     );
   }
 
-  // if (Component.privateLayout) {
-  //   return Component.privateLayout(
-
-  //   );
-  // }
-
-  return (
-    <>
+  if (Component.privateLayout) {
+    return Component.privateLayout(
       <PrivateLayout>
         <Component {...pageProps} />
-      </PrivateLayout>
-    </>
-  );
+      </PrivateLayout>,
+    );
+  }
+
+  return <Component {...pageProps} />;
 }

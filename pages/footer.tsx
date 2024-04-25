@@ -12,7 +12,7 @@ function Footer() {
   return (
     <div className=" bg-primary pb-5">
       <div className=" flex items-center">
-        <div className=" flex w-[35%] flex-col items-center gap-6 border-r-[1px] border-blackOpacity py-8 text-[18px] font-semibold">
+        <div className=" flex w-[35%] flex-col items-center gap-6 border-r-[1px] border-blackOpacity py-8 text-[20px] font-semibold">
           <Link href="/">Home</Link>
           <Link href="/">Support</Link>
           <Link href="/">Terms and Conditions</Link>
