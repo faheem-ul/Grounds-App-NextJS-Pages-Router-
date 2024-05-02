@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { ReactNode, useRef } from "react";
 
 import HomeResponsive from "@/components/ui/HomeResponsive";
+import FooterLayout from "@/components/Layouts/FooterLayout/FooterLayout";
 
 import lineSvg from "../public/line.svg";
 import arrowSvg from "../public/arrow.svg";
@@ -118,6 +119,6 @@ function Home() {
 
 export default Home;
 
-Home.footerLayout = function (page: any) {
-  return <>{page}</>;
+Home.footerLayout = function (page: ReactNode) {
+  return <FooterLayout>{page}</FooterLayout>;
 };

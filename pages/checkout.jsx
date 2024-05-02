@@ -11,6 +11,7 @@ import appledownloadSvg from "../public/appledonwload.svg";
 import googledownloadSvg from "../public/googledownload.svg";
 import arrowbackSvg from "../public/arrowback.svg";
 import oneSvg from "../public/one.svg";
+import PublicLayout from "@/components/Layouts/PublicLayout/PublicLayout";
 
 function Checkout() {
   return (
@@ -127,5 +128,5 @@ function Checkout() {
 export default Checkout;
 
 Checkout.getLayout = function (page) {
-  return <>{page}</>;
+  return <PublicLayout>{page}</PublicLayout>;
 };

@@ -13,6 +13,7 @@ import googledownloadSvg from "../public/googledownload.svg";
 import appledownloadSvg from "../public/appledonwload.svg";
 import { error, log } from "console";
 import Signup from "./signup";
+import PrivateLayout from "@/components/Layouts/PrivateLayout/PrivateLayout";
 
 function Login() {
   const router = useRouter();
@@ -29,7 +30,7 @@ function Login() {
         const loginUserCredentials = await signInWithEmailAndPassword(
           auth,
           loginEmail,
-          loginPassword,
+          loginPassword
         );
         console.log("login successful");
 
@@ -147,5 +148,5 @@ function Login() {
 
 export default Login;
 Login.privateLayout = function (page: any) {
-  return <>{page}</>;
+  return <PrivateLayout>{page}</PrivateLayout>;
 };

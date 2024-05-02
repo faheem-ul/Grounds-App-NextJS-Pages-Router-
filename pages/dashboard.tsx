@@ -100,5 +100,5 @@ function Dashboard() {
 
 export default Dashboard;
 Dashboard.privateLayout = function (page: any) {
-  return <>{page}</>;
+  return <PrivateLayout>{page}</PrivateLayout>;
 };

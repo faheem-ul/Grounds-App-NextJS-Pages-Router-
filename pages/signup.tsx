@@ -15,6 +15,7 @@ import googledownloadSvg from "../public/googledownload.svg";
 import twoSvg from "../public/two.svg";
 import threeSvg from "../public/three.svg";
 import errorSvg from "../public/error.svg";
+import PrivateLayout from "@/components/Layouts/PrivateLayout/PrivateLayout";
 
 function Signup() {
   const router = useRouter();
@@ -40,7 +41,7 @@ function Signup() {
         const userCredentials = await createUserWithEmailAndPassword(
           auth,
           email,
-          password,
+          password
         );
         // console.log(userCredentials);
         const uid = userCredentials.user.uid;
@@ -249,5 +250,5 @@ function Signup() {
 export default Signup;
 
 Signup.privateLayout = function (page: any) {
-  return <>{page}</>;
+  return <PrivateLayout>{page}</PrivateLayout>;
 };

@@ -77,36 +77,24 @@ import PrivateLayout from "@/components/Layouts/PrivateLayout/PrivateLayout";
 import FooterLayout from "@/components/Layouts/FooterLayout/FooterLayout";
 import PublicLayout from "@/components/Layouts/PublicLayout/PublicLayout";
 
-interface AppPropsWithLayout extends AppProps {
-  Component: NextComponent & {
-    getLayout?: (page: JSX.Element) => JSX.Element;
-    footerLayout?: (page: JSX.Element) => JSX.Element;
-    privateLayout?: (page: JSX.Element) => JSX.Element;
-  };
-}
+// interface AppPropsWithLayout extends AppProps {
+//   Component: NextComponent & {
+//     getLayout?: (page: JSX.Element) => JSX.Element;
+//     footerLayout?: (page: JSX.Element) => JSX.Element;
+//     privateLayout?: (page: JSX.Element) => JSX.Element;
+//   };
+// }
 export default function App({ Component, pageProps }: AppProps) {
   if (Component.getLayout) {
-    return Component.getLayout(
-      <PublicLayout>
-        <Component {...pageProps} />
-      </PublicLayout>,
-    );
+    return Component.getLayout(<Component {...pageProps} />);
   }
 
   if (Component.footerLayout) {
-    return Component.footerLayout(
-      <FooterLayout>
-        <Component {...pageProps} />
-      </FooterLayout>,
-    );
+    return Component.footerLayout(<Component {...pageProps} />);
   }
 
   if (Component.privateLayout) {
-    return Component.privateLayout(
-      <PrivateLayout>
-        <Component {...pageProps} />
-      </PrivateLayout>,
-    );
+    return Component.privateLayout(<Component {...pageProps} />);
   }
 
   return <Component {...pageProps} />;
