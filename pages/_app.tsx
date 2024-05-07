@@ -72,19 +72,17 @@
 import type { AppProps } from "next/app";
 
 import "@/styles/globals.css";
+import { ReactNode } from "react";
+import { NextComponentType, NextPageContext } from "next";
 
-import PrivateLayout from "@/components/Layouts/PrivateLayout/PrivateLayout";
-import FooterLayout from "@/components/Layouts/FooterLayout/FooterLayout";
-import PublicLayout from "@/components/Layouts/PublicLayout/PublicLayout";
-
-// interface AppPropsWithLayout extends AppProps {
-//   Component: NextComponent & {
-//     getLayout?: (page: JSX.Element) => JSX.Element;
-//     footerLayout?: (page: JSX.Element) => JSX.Element;
-//     privateLayout?: (page: JSX.Element) => JSX.Element;
-//   };
-// }
-export default function App({ Component, pageProps }: AppProps) {
+interface AppPropsWithLayout extends AppProps {
+  Component: NextComponentType<NextPageContext, any, any> & {
+    getLayout?: (page: ReactNode) => ReactNode;
+    footerLayout?: (page: ReactNode) => ReactNode;
+    privateLayout?: (page: ReactNode) => ReactNode;
+  };
+}
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
   if (Component.getLayout) {
     return Component.getLayout(<Component {...pageProps} />);
   }

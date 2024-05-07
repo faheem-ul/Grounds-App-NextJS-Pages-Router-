@@ -1,7 +1,7 @@
 import Footer from "@/pages/footer";
-import React from "react";
+import React, { ReactNode } from "react";
 
-function FooterLayout({ children }: any) {
+function FooterLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <main>{children}</main>

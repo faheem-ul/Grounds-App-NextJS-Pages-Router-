@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { ReactNode, useContext, useEffect } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -99,6 +99,6 @@ function Dashboard() {
 }
 
 export default Dashboard;
-Dashboard.privateLayout = function (page: any) {
+Dashboard.privateLayout = function (page: ReactNode) {
   return <PrivateLayout>{page}</PrivateLayout>;
 };

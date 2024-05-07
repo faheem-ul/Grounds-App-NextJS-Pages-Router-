@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 import AuthProvider from "@/context/AuthContext";
 import PublicRoutes from "./PublicRoutes";
 
-function PublicLayout({ children }: any) {
+function PublicLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <AuthProvider>

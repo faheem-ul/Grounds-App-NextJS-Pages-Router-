@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { ReactNode, useEffect } from "react";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { User } from "firebase/auth";
@@ -15,7 +15,7 @@ export const AuthContext = React.createContext<AuthContextType>({
   loading: false,
 });
 
-function AuthProvider({ children }: any) {
+function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 

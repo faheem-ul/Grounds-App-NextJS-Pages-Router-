@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -147,6 +147,6 @@ function Login() {
 }
 
 export default Login;
-Login.privateLayout = function (page: any) {
+Login.privateLayout = function (page: ReactNode) {
   return <PrivateLayout>{page}</PrivateLayout>;
 };
