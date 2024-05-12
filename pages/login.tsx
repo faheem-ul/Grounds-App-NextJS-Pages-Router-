@@ -76,7 +76,7 @@ function Login() {
 
               <p className=" underline"> Forgot Password</p>
               <p className=" mt-10 text-center text-blackOpacity mob:mt-8 mob:font-medium">
-                You don't have an account?{" "}
+                You donot have an account?{" "}
                 <span className="underline ">
                   <Link href="/checkout">Sign Up</Link>
                 </span>
